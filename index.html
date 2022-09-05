@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Invoice</title>
+	<!-- bootstrap css -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- bootstrap css -->
+	<!-- bootstrap js -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- bootstrap js -->
+	<!-- jquery cdn -->
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<style>
+		body{
+			font-size:12px;
+			 width: 21cm;
+			 height: 29.7cm;
+			  padding: 2cm;
+			  margin: 1cm auto;
+			  border: 1px #D3D3D3 solid;
+			  border-radius: 5px;
+			  background: white;
+			  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- heading -->
+		<nav class="navbar navbar-light bg-light d-flex justify-content-center">
+		  <h2 class="text text-center">SPK Electronics Invoice</h2>
+		</nav>
+	<!-- heading end-->
+	<!-- input section -->
+		<div class="input-group mb-5">
+		  <input type="text" class="form-control p-2" id="items" placeholder="Product Name">
+		  <input type="number" class="form-control p-2" id="price" placeholder=" Unit Price">
+		  <input type="number" class="form-control p-2" id="qty" placeholder=" Qnty">
+		  <input type="number" class="form-control p-2" id="dis" placeholder=" Discount %">
+		  <input type="button" class="form-control btn btn-primary" value="Add Items" id="productBtn">
+		</div>
+		<!-- input section end-->
+
+
+		<div id="invoice">
+			<div class="row">
+				<div class="col">
+					<p>Shop Address:<br>SPK Electronics.<br> Gotia, Puthia, Rajshahi.<br>Mobile: 01739412054
+					</p>
+				</div>
+				<div class="col text-end">
+					<p>Invoiced To<br>Name: Md. Shakel Kawsar<br>Komlapur,Dhaka-1212</p>
+				</div>
+			</div>
+			<div class="row"  style="width: 100%; margin-left:55px;">
+				<h2 class="text-center">------Retail Invoice-----</h2>
+				<div class="col-6 d-flex mt-3">
+					<div class="form-group col-sm-2">
+						<label for="cname">Cashier ID:</label>
+					</div>
+					<div class="form-group col-sm-4">
+						<input type="text" class="form-control col-sm-4" placeholder="S1245" readonly>
+					</div>
+
+				</div>
+				<div class="col-6 d-flex mt-3">
+					<div class="form-group col-sm-4">
+						<label for="cname">Terminal Id:</label>
+					</div>
+					<div class="form-group col-sm-4">
+						<input type="text" class="form-control col-sm-4" placeholder="D051P012" readonly>
+					</div>
+				</div>
+			</div>
+			<div class="row"  style="width: 100%; margin-left:55px;">
+				<div class="col-6 d-flex mt-3">
+					<div class="form-group col-sm-2">
+						<label for="cname">Invoice No:</label>
+					</div>
+					<div class="form-group col-sm-4">
+						<input type="text" id="invc" onclick="random()" class="form-control col-sm-4" value="" readonly>
+					</div>
+
+				</div>
+				<div class="col-6 d-flex mt-3">
+					<div class="form-group col-sm-4">
+						<label for="cname">Date :</label>
+					</div>
+					<div class="form-group col-sm-4">
+						<input type="date" class="form-control col-sm-4">
+					</div>
+				</div>
+			</div>
+			<hr style="border:1px dotted;">
+			<p>To Enjoy Special Discount Please Register as a loyalty customer. Thanks</p>
+			<table class="table">
+				<thead>
+					<tr>
+						<th width="10%">Sl</th>
+						<th width="50%">Item Description</th>
+						<th width="15%">Unit Price</th>
+						<th width="10%">Qty</th>
+						<th width="15%">Total</th>
+					</tr>
+				</thead>
+				<tbody id="productTable">
+					
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3"></td>
+						<td>Sub Total: </td>
+						<td id="subTotal"></td>
+					</tr>
+					<tr>
+						<td colspan="3"></td>
+						<td>(-) Discount: </td>
+						<td id="discount">00</td>
+						
+					</tr>
+					<tr>
+						<td colspan="4"></td>
+						<td id="total">
+						 <hr style="border:1px dotted;">
+					 	</td>
+					</tr>
+					<tr>
+						<td colspan="3"></td>
+						<td>5% VAT :</td>
+						<td id="vat"></td>
+						
+					</tr>
+					<tr>
+						<td colspan="3"></td>
+						<td>Grand Total</td>
+						<td id="granTotal"></td>
+					</tr>
+					<tr>
+						<td colspan="3"></td>
+						<td>Cash Paid</td>
+						<td id="cash"></td>
+					</tr>
+					<hr style="border:1px dotted;">
+					<tr>
+						<td></td>
+						<td class="text-end fw-bold">Your Total Savings Today:</td>
+						<td id="savings"></td>
+						<td colspan="2"></td>
+						
+					</tr>
+					
+				</tfoot>
+			</table>
+			<hr style="border:1px dotted;">
+		</div>
+		<label for="">Note:</label>
+		<textarea name="" id="" style="width: 100%;"></textarea>
+		<button id="printBtn" class="btn btn-primary">Print</button>
+	</div> <!--container end-->
+
+
+<!-- main js file -->
+<script src="js/main.js"></script>
+<!-- main js file -->
+</body>
+</html>
