@@ -12,7 +12,7 @@ btn.addEventListener('click', function(){
 	//New Row Create
  	let newRow = document.createElement('tr');
 	//Table Row count for serial
- 	let table =document.getElementById('productTable'), sumVal = 0;;
+ 	let table =document.getElementById('productTable'), sumVal = 0;
 	let totalRowCount = table.rows.length+1;
  	//Items Serial Create
  	let newSl = document.createElement('td');
